@@ -7,6 +7,7 @@
 <body>
 	<h1>ES6 Sandbox</h1>
 	
+	<button>Press me</button>
 
 	<script tpe="text/javascript">
 		
@@ -37,13 +38,22 @@
 		const winners = ['Han SOlo', 'Chewie', 'Lando Calrissian'];
 
 		const win = winners.map((winner, i) => ({ name: winner, race: race, place: i + 1 }))
-		console.log(win);
+		// console.log(win);
 
 		// Use .filter() and an implicit return
 		const ages = [ 2,6,6,5,4,56,56,7,7,6,74,756, 565, 5444];
 
 		const old = ages.filter(age => age >= 500);
-		console.log(old)
+		// console.log(old)
+
+
+		// When not to use an arrow function. Added <button>Press Me</button>
+
+		const button = document.querySelector('button')
+		button.addEventListener('click', () => {
+			console.log(this);
+			this.style.display = 'none';
+		})
 
 	</script>
 </body>
