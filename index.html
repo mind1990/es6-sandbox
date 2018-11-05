@@ -57,7 +57,7 @@
 
 		// When you really this 'this'
 		const button = document.querySelector('button')
-		button.addEventListener('click', function () {
+		button.addEventListener('click', function() {
 		  this.style.display = 'none';
 		});
 
@@ -84,8 +84,41 @@
 			return `This is a ${this.colour} ${this.make}`
 		}
 
-		// Wen you want/need 
+		// When you want/need to use the 'arguments' object
+		const orderChildren = function() {
+			const children = Array.from(arguments);
+			return children.map((child, i) => {
+				return `${child} was #${i + 1}`;
+			});
+		}
+		// console.log(orderChildren('Brock', 'Andrew', 'Jeff'));
 
+
+		// Basic Template String
+		const car = 'Prius';
+		const yearsOld = 17;
+		const sentence = `My ${car} is ${yearsOld} years old`;
+
+		console.log(sentence)
+
+		// Multiline HTML Fragment using Template Strings
+		const favChannel = {
+			presenterName: 'Nigel Saunders',
+			job: 'Retired Software Engineer',
+			channelName: 'Nigel Saunders, The Bonsai Zone',
+			city: 'Stratford, Ontario'
+		}
+
+		const markup = `
+			<div class="channel-card">
+				<h2>${ favChannel.channelName }</h2>
+
+				<p>Presenter: ${ favChannel.presenterName }</p>
+				<p>Career: ${ favChannel.job }</p>
+
+				<strong>${ favChannel.city }</strong>
+			</div>
+		`
 
 
 	</script>
