@@ -49,11 +49,44 @@
 
 		// When not to use an arrow function. Added <button>Press Me</button>
 
+		// const button = document.querySelector('button')
+		// button.addEventListener('click', () => {
+		// 	console.log(this);
+		// 	this.style.display = 'none';
+		// });
+
+		// When you really this 'this'
 		const button = document.querySelector('button')
-		button.addEventListener('click', () => {
-			console.log(this);
-			this.style.display = 'none';
-		})
+		button.addEventListener('click', function () {
+		  this.style.display = 'none';
+		});
+
+		// When binding a method to an object
+		const playerOne = {
+			points: 23,
+			score: function () {
+				this.points++;
+			}
+		}
+
+		// When you need to add a prototype method on a thing
+		class Car {
+			constructor(make, colour) {
+				this.make = make;
+				this.colour = colour
+			}
+		}
+
+		const pripri = new Car('Prius', 'white')
+		const ravrav = new Car('Rav4', 'Mid Life Crisis Red')
+
+		Car.prototype.summarize = () => {
+			return `This is a ${this.colour} ${this.make}`
+		}
+
+		// Wen you want/need 
+
+
 
 	</script>
 </body>
