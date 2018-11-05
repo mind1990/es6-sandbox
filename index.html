@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>ES6 Sandbox</h1>
+	
+
+	<script tpe="text/javascript">
+		
+		const streets = ['16th', 'Guerroro', 
+		'Valencia'
+		]
+
+		const modStreets = streets.map(function(street) {
+			return `${street} St.`
+		});
+
+		const modStreets2 = streets.map((street) => {
+			return `{street} St.`
+		});
+
+		const modStreets3 = streets.map(street => {
+			return `${street} St.`
+		})
+
+		const modStreets4 = streets.map(street => `${street} St.`);
+
+		// const modStreets5 = streets.map => `Brock is close`;
+
+		// console.log(modStreets5);
+
+		// Implicit return with an object literal
+		const race = 'Kessel Run';
+		const winners = ['Han SOlo', 'Chewie', 'Lando Calrissian'];
+
+		const win = winners.map((winner, i) => ({ name: winner, race: race, place: i + 1 }))
+		console.log(win);
+
+		// Use .filter() and an implicit return
+		const ages = [ 2,6,6,5,4,56,56,7,7,6,74,756, 565, 5444];
+
+		const old = ages.filter(age => age >= 500);
+		console.log(old)
+
+	</script>
+</body>
+</html>
+
+<!-- 1. Use var for data shared in larger scopes
+		 2. Use let for storing data in smaller scopes
+		 3. Only use const after some code has been written and you're sure you don't want to reassign something. -->
