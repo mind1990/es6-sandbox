@@ -120,6 +120,69 @@
 			</div>
 		`
 
+		// Nested template strings
+		const students = [
+			{ name: 'Emily', formerJob: 'Business Analyst' },
+			{ name: 'Evan', formerJob: 'Teacher' },
+			{ name: 'Brock', formerJob: 'Barback/Drinking' },
+		];
+
+		const markup2 = `
+			<ul>
+				${ students.map(student => `<li>${ student.name }
+				used to be a ${ student.formerJob }, but now does web dev</li>`) }
+			</ul>
+		`
+		console.log(markup2);
+
+
+		// Object property upgrades
+		class Superhero {
+			constructor() {
+				this.name = name,
+				this.secretIdentity = secretIdentity,
+				this.capeColour = capeColour
+			}
+		}
+		
+		/////// Quick ES6 Exercise! /////////
+
+		// const addTwo = num => {
+		// 	return num + 2;
+		// }
+
+		// console.log(addTwo(1));
+
+		const addTwo = num => num + 2;
+		console.log(addTwo(5))
+
+
+		// ES5 
+		function eatBreakfast(pancakes) {
+			var that = this;
+			that.food = 'Knife please?';
+			Waiter.bringCutlery(function (silverware) {
+				that.food = silverware;
+			});
+		}
+
+		// ES6
+		const eatBreakfast = pancakes => {
+			this.food = 'Knife please?';
+			Waiter.bringCutlery((silverware) => this.food = silverware);
+		}
+
+		// ES5
+		var price = 100;
+		var item = {price: price};
+
+		// ES6
+		const price = 100;
+		const item = {price};
+
+		// Template literals for string interpolation
+		const greeting = name => `Hi, ${name}.`;
+
 
 	</script>
 </body>
@@ -128,3 +191,30 @@
 <!-- 1. Use var for data shared in larger scopes
 		 2. Use let for storing data in smaller scopes
 		 3. Only use const after some code has been written and you're sure you don't want to reassign something. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
